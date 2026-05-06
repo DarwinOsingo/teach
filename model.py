@@ -1,12 +1,13 @@
 from pydantic import BaseModel
 from typing import Literal
 
-class ChatMessege(BaseModel):
-    role : Literal["user","assistant","system"]
-    content : str
+class ChatMessage(BaseModel):
+    role: Literal["user", "assistant", "system"]
+    content: str
+
 class ChatRequest(BaseModel):
-    messeges:list[ChatMessege]
-    
+    messages: list[ChatMessage]
+
 class ChatResponse(BaseModel):
-    reply:str
-    model:str
+    reply: str
+    model: str
